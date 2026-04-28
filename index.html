@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Responsive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen bg-gray-100 font-sans">
+
+<div class="flex h-full">
+  <!-- SIDEBAR -->
+<aside id="sideBar" class="hidden md:flex md:w-64 bg-white border-r flex-col justify-between fixed md:relative z-50 h-full shadow-lg">
+
+    <div>
+      <!-- Perfil -->
+      <div class="flex items-center gap-3 p-4 border-b">
+        <img src="usuarios/fotos/roi.jpg" class="w-10 h-10 rounded-full">
+        <div>
+          <h2 id="usser" class="font-semibold text-sm" >Nicolas</h2>
+          <p class="text-xs text-green-500">● En línea</p>
+        </div>
+      </div>
+
+      <!-- Chats -->
+      <div id="chatLista" class="p-4">
+        <h3 class=" text-gray-500 text-xs mb-2">Chats</h3>
+
+        <p class="text-xs text-gray-400 mt-2">Grupos</p>
+        <ul class=" space-y-1 mt-1">
+          <li class="hover:bg-gray-100 p-2 rounded cursor-pointer"># campaña</li>
+          <li class="hover:bg-gray-100 p-2 rounded cursor-pointer"># calidad</li>
+          <li class="hover:bg-gray-100 p-2 rounded cursor-pointer"># formacion</li>
+        </ul>
+
+        <p class="text-xs text-gray-400 mt-4">Personas</p>
+        <ul class="space-y-1 mt-1">          
+          <li class="nameLista hover:bg-gray-100 p-2 rounded cursor-pointer flex items-center">
+            <img   src="usuarios/fotos/Bang Bang.jpg" class="imgLista w-8 h-8 rounded-full mr-2">
+            Pepito
+          </li>
+          <li class="nameLista hover:bg-gray-100 p-2 rounded cursor-pointer flex items-center">
+            <img   src="usuarios/fotos/porter.webp" class="imgLista w-8 h-8 rounded-full mr-2">
+            Juanito
+          </li>
+          <li class="nameLista hover:bg-gray-100 p-2 rounded cursor-pointer flex items-center">
+            <img src="usuarios/fotos/khaki.jfif" class="imgLista w-8 h-8 rounded-full mr-2">
+            Sultanita
+          </li>    
+        </ul>
+      </div>
+    </div>
+
+        <div class="p-4 border-t">
+        <button id="btnSideIA" class="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600">
+          🤖 Chatbot soporte
+        </button>
+      </div>
+    <!-- Nav -->
+    <div class="p-4 border-t text-xs flex justify-around text-gray-500">
+      <span>Inicio</span>
+      <span>Archivos</span>
+      <span>Config</span>
+    </div>
+
+  </aside>
+
+
+  <!-- CHAT AREA -->
+  <main class="flex-1 flex flex-col">
+
+    <!-- HEADER -->
+    <div class="flex items-center justify-between p-3 bg-white border-b">
+
+      <div class="flex items-center gap-2">
+        <!-- Botón menú móvil -->
+        <button id="btnMenu" class="text-xl block md:hidden">☰</button>
+
+        <img  id="imgPresentacion" src="usuarios/fotos/Bang Bang.jpg" class="w-8 h-8 rounded-full">
+        <h2 id="personPresentacion" class="font-semibold text-sm">Pepito</h2>
+      </div>
+
+      <!-- Botón IA en móvil -->
+      <button id="butonIA" class="lg:hidden text-sm bg-purple-500 text-white px-3 py-1 rounded">
+        IA
+      </button>
+
+    </div>
+
+
+    <!-- MENSAJES -->
+    <div id="chatMensajes" class="flex-1 overflow-y-auto p-3 space-y-3 ">
+
+      <div class="flex gap-2">
+        <img src="usuarios/fotos/Bang Bang.jpg" class="w-7 h-7 rounded-full">
+        <p class="bg-gray-200 p-2 rounded-lg text-sm max-w-xs">
+          Hola 👋
+        </p>
+      </div>
+
+
+
+    </div>
+
+
+    <!-- INPUT -->
+    <div class="p-3 bg-white border-t flex gap-2">
+      <input type="text"
+        placeholder="Escribe..." id="chatInput"
+        class="flex-1 border rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+      
+      <button id="btnChatInput" class="bg-blue-500 text-white px-4 rounded-full">
+        ➤
+      </button>
+    </div>
+
+  </main>
+
+
+  <!-- PANEL DERECHO (solo desktop) -->
+  <aside class="hidden lg:flex lg:w-72 bg-white border-l p-4 flex-col gap-4" >
+
+    <div class="border rounded-xl p-3">
+      <h3 class="font-semibold text-sm mb-2">🤖 Chatbot</h3>
+      <input id="inputIA" class="text-xs bg-gray-100 p-2 rounded"  placeholder="¿En qué puedo ayudarte?">
+
+    </input>
+    </div>
+
+    <div class="border rounded-xl p-3">
+      <h3 class="font-semibold text-sm mb-2">Historial</h3>
+      <ul class="text-xs space-y-1 text-gray-600">
+        <li>Resumen chat</li>
+        <li>Reporte AI</li>
+        <li>Ideas</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div>
+
+<script type="module" src="controladores.js"></script>
+</body>
+</html>
