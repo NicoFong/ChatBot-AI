@@ -48,6 +48,7 @@ app.post("/api/chat", async (req, res) => {
     }
 });
 // ── Servidor ──────────────────────────────────────────────────────────────────
-app.listen(3000, "127.0.0.1", () => {
-    console.log("Servidor corriendo en http://127.0.0.1:3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en puerto ${PORT}`);
 });
