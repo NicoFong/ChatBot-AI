@@ -11,8 +11,7 @@ export let mensajeX = mensajes;
 
 let chatActivo = null;
 
-const API_URL = "http://127.0.0.1:3000/api/chat";
-
+const API_URL = "https://chatbot-ai-dm33.onrender.com/api/chat";
 function SelectChat(e) {
     let li = e.target.closest("li");
     if (!li || !chatLista.contains(li)) return;
